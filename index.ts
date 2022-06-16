@@ -1,3 +1,5 @@
+import { isCallOrNewExpression } from "typescript";
+
 console.log("TypeScript");
 function soma(a: number, b:number){
     return a+b;
@@ -7,19 +9,25 @@ soma(2,3)
 interface IAnimal {
     nome: string;
     tipo: 'terrestre' | 'aquatico';
-    executarsom(alturaEmDecibeis: number): void;
+   domestico: boolean;
 }
-
-interface IFelinos extends IAnimal{
+interface ICanino extends IAnimal{
+    porte: 'pequeno'| 'medio' | 'grande';
+}
+interface IFelino extends IAnimal{
     visãoNoturna: boolean;
 
 }
-const animal: IAnimal ={
-    nome: 'Elefante',
-    tipo:"terrestre",
-    executarsom:(alturaEmDecibeis) => (`${alturaEmDecibeis}dB`)
+type IDomestico = IFelino | ICanino;
+const animal: IDomestico ={
+   domestico: true,
+   nome: 'gato',
+   tipo:"terrestre",
+   porte: "pequeno",
+   visãoNoturna: true,
+    
 }
-animal.executarsom(15)
+
 
 /*const felino: IFelinos = {
     nome:'Leão',
