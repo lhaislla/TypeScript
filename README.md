@@ -1,7 +1,7 @@
 # Como criar um projeto em TypeScript
 <ul> 
     <li> npm init </li>
-    <li> instala o parcel-budler </li>
+    <li> instala o parcel-budler: sudo npm i parcel-bundler</li>
     <li> Adiciona "start": "parcel index.html", na parte de script do arquivo package.json </li>
     <li> Cria um arquivo index.ts </li>
     <li> Cria um arquivo index.html e passa o caminho do script index.ts no body </li>
